@@ -1,13 +1,16 @@
-import Directory from "../src/components/directory/directory.component";
-import { categories } from "../src/components/CategoryData/categoryData";
-
-// https://github.com/Taobal2/online-cloth-shopping.git
+import Home from "./routes/home/home.component";
+import { Routes, Route } from "react-router-dom";
+import Navigation from "./routes/navigation/navigation.component";
+import SignIn from "./routes/signIn/signIn.component";
 
 function App() {
   return (
-    <div>
-      <Directory categories={categories} />
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route path="/home" element={<Home />} />
+        <Route path="/signIn" element={<SignIn />} />
+      </Route>
+    </Routes>
   );
 }
 
